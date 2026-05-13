@@ -1,39 +1,33 @@
 /*
-  BOX ELDER ANSWERS — v8 MODULAR CONTROL FILE
+  BOX ELDER ANSWERS — CLEAN MODULAR CONTROL FILE
 
-  For normal updates, edit THIS FILE only:
-  assets/js/content-codes.js
+  Replace the entire content-codes.js file with this.
+  This version fixes the issue where highlighted mission words kept coming back.
 
-  You can change:
-  - main wording
-  - links
-  - colors
-  - menu dropdowns
-  - social media links
-  - hero/background images
-  - global live background
-  - homepage video cards
-  - homepage image cards
-
-  Basic rule:
-  Change the text between backticks `like this`.
-  Change URLs between quotes "like this".
-  Save, redeploy, and refresh.
-
-  IMPORTANT:
-  This file is for routine edits. Major new page layouts may still need HTML/CSS work.
+  Normal edits should happen in the QUICK SETTINGS and content sections below.
 */
 
 window.BEA_CODES = {
+  SETTINGS: {
+    MISSION_TITLE_MODE: "plain", // "plain" or "highlight"
+    MISSION_HIGHLIGHT_COLOR: "white",
+
+    PETITION_BUTTON_STYLE: "glass", // "glass", "red", or "blue"
+
+    GLOBAL_BACKGROUND_ON: true,
+    GLOBAL_BACKGROUND_OPACITY: ".10"
+  },
+
   THEME: {
     SOFT_RED: "#b55d62",
     SOFT_BLUE: "#7dc0d1",
     DEEP_BLUE: "#061a2a",
     DEEP_BLUE_2: "#082338",
 
-    // This controls the soft background image visible behind every page.
-    GLOBAL_BACKGROUND_IMAGE: "https://www.fws.gov/sites/default/files/styles/max_1300x1300/public/images/2025-09/visitor-center-from-dock-at-bear-river-migratory-bird-refuge-usfws.jpg?itok=euz0qzvK",
-    GLOBAL_BACKGROUND_OPACITY: ".10"
+    GLASS_BUTTON_BACKGROUND: "rgba(255,255,255,.08)",
+    GLASS_BUTTON_BORDER: "rgba(255,255,255,.18)",
+
+    GLOBAL_BACKGROUND_IMAGE: "https://www.fws.gov/sites/default/files/styles/max_1300x1300/public/images/2025-09/visitor-center-from-dock-at-bear-river-migratory-bird-refuge-usfws.jpg?itok=euz0qzvK"
   },
 
   LINKS: {
@@ -43,7 +37,6 @@ window.BEA_CODES = {
   },
 
   SOCIAL: {
-    // Leave a link blank if you do not want it to show yet.
     FACEBOOK: "",
     INSTAGRAM: "",
     TIKTOK: "",
@@ -94,12 +87,10 @@ window.BEA_CODES = {
   },
 
   MEDIA: {
-    // These control the three rotating homepage hero backgrounds.
     HERO_BACKGROUND_1: "https://www.fws.gov/sites/default/files/styles/max_1300x1300/public/images/2025-09/visitor-center-from-dock-at-bear-river-migratory-bird-refuge-usfws.jpg?itok=euz0qzvK",
     HERO_BACKGROUND_2: "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/greatsaltlake_oli_2021205_lrg.jpg",
     HERO_BACKGROUND_3: "https://www.fws.gov/sites/default/files/styles/max_1300x1300/public/2023-07/sunset%20of%20bear%20river%20mig%20bird%20refuge%20in%20utah%20sandra%20uecker%20usfws%20june%2012%202021.jpg?itok=Q9WLtNtS",
 
-    // Page hero images. Change these later without editing the HTML.
     PAGE_BACKGROUNDS: {
       "project-stratos.html": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/greatsaltlake_oli_2021205_lrg.jpg",
       "data-centers-explained.html": "https://www.fws.gov/sites/default/files/styles/max_1300x1300/public/images/2025-09/visitor-center-from-dock-at-bear-river-migratory-bird-refuge-usfws.jpg?itok=euz0qzvK",
@@ -130,9 +121,14 @@ window.BEA_CODES = {
 
     MISSION_EYEBROW: `Why this exists`,
     MISSION_TITLE: `A public message built on clarity, time, and honest answers.`,
+    MISSION_HIGHLIGHT_WORDS: ["clarity", "time", "honest answers"],
+
     MISSION_LEAD: `Residents are not reacting because they fear technology. They are reacting because a project this large felt like it moved faster than the public explanation that should have come with it.`,
+
     MISSION_P1: `<span class="highlight">Box Elder Answers exists to slow the conversation down</span> long enough for regular people to understand what is being proposed, who controls the process, and what the long term consequences could be for water, power, land, taxes, and public oversight.`,
+
     MISSION_P2: `<span class="highlight">This is about more than one project announcement.</span> It is about whether a rural county is expected to absorb enormous infrastructure decisions first and receive complete explanations later. People want facts they can read, questions they can ask, and a public record that does not require guesswork.`,
+
     MISSION_P3: `<span class="highlight">The goal is education before momentum.</span> When residents can clearly see the records, compare official claims with the underlying documents, and understand what other communities experienced, they are in a stronger position to protect Box Elder County and demand responsible review.`,
 
     PUBLIC_ASK_KICKER: `The public ask`,
@@ -147,28 +143,14 @@ window.BEA_CODES = {
     SHOW_SECTION: false,
     SECTION_TITLE: `Watch the issue explained`,
     SECTION_TEXT: `Use this section later for a YouTube video, local meeting clip, explainer video, or campaign message.`,
-    ITEMS: [
-      // Example:
-      // {
-      //   title: `Public meeting clip`,
-      //   description: `Short explanation of why residents are asking for records first.`,
-      //   embedUrl: `https://www.youtube.com/embed/VIDEO_ID`
-      // }
-    ]
+    ITEMS: []
   },
 
   GALLERY: {
     SHOW_SECTION: false,
     SECTION_TITLE: `Photos and public visuals`,
     SECTION_TEXT: `Use this section later for local photos, public meeting screenshots, maps, or project visuals.`,
-    ITEMS: [
-      // Example:
-      // {
-      //   title: `Tremonton mountain view`,
-      //   description: `Local landscape visual for the public education page.`,
-      //   imageUrl: `assets/images/tremonton.jpg`
-      // }
-    ]
+    ITEMS: []
   },
 
   QUICK_POSTS: {
@@ -176,29 +158,40 @@ window.BEA_CODES = {
   }
 };
 
-/* ---------- Do not edit below this line unless changing site behavior ---------- */
+/* =========================================================
+   SITE ENGINE
+   Do not edit below this line unless changing behavior.
+   ========================================================= */
 
 (function () {
   const C = window.BEA_CODES || {};
   const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   function setVar(name, value) {
-    if (value) document.documentElement.style.setProperty(name, value);
+    if (value !== undefined && value !== null) {
+      document.documentElement.style.setProperty(name, value);
+    }
   }
 
   function txt(selector, value) {
     if (value === undefined || value === null) return;
-    document.querySelectorAll(selector).forEach(el => { el.textContent = value; });
+    document.querySelectorAll(selector).forEach(el => {
+      el.textContent = value;
+    });
   }
 
   function html(selector, value) {
     if (value === undefined || value === null) return;
-    document.querySelectorAll(selector).forEach(el => { el.innerHTML = value; });
+    document.querySelectorAll(selector).forEach(el => {
+      el.innerHTML = value;
+    });
   }
 
   function attr(selector, name, value) {
     if (value === undefined || value === null) return;
-    document.querySelectorAll(selector).forEach(el => { el.setAttribute(name, value); });
+    document.querySelectorAll(selector).forEach(el => {
+      el.setAttribute(name, value);
+    });
   }
 
   function safeUrl(value) {
@@ -206,14 +199,89 @@ window.BEA_CODES = {
   }
 
   function setBgVar(name, url) {
-    if (url) setVar(name, `url("${safeUrl(url)}")`);
+    if (url) {
+      setVar(name, `url("${safeUrl(url)}")`);
+    }
   }
 
   function setLinks(oldPart, newUrl) {
     if (!newUrl) return;
     document.querySelectorAll("a[href]").forEach(a => {
-      if (a.href.includes(oldPart)) a.href = newUrl;
+      if (a.href.includes(oldPart)) {
+        a.href = newUrl;
+      }
     });
+  }
+
+  function injectSiteStyles() {
+    const settings = C.SETTINGS || {};
+    const theme = C.THEME || {};
+    const buttonStyle = settings.PETITION_BUTTON_STYLE || "glass";
+    const style = document.createElement("style");
+
+    let petitionButtonCss = "";
+
+    if (buttonStyle === "glass") {
+      petitionButtonCss = `
+        .btn.primary,
+        .nav-cta {
+          background: ${theme.GLASS_BUTTON_BACKGROUND || "rgba(255,255,255,.08)"} !important;
+          border: 1px solid ${theme.GLASS_BUTTON_BORDER || "rgba(255,255,255,.18)"} !important;
+          color: white !important;
+        }
+      `;
+    } else if (buttonStyle === "blue") {
+      petitionButtonCss = `
+        .btn.primary,
+        .nav-cta {
+          background: ${theme.SOFT_BLUE || "#7dc0d1"} !important;
+          border: 1px solid rgba(255,255,255,.18) !important;
+          color: #061a2a !important;
+        }
+      `;
+    } else {
+      petitionButtonCss = `
+        .btn.primary,
+        .nav-cta {
+          background: ${theme.SOFT_RED || "#b55d62"} !important;
+          border: 1px solid rgba(255,255,255,.18) !important;
+          color: white !important;
+        }
+      `;
+    }
+
+    style.textContent = `
+      .accent {
+        color: ${settings.MISSION_HIGHLIGHT_COLOR || "white"} !important;
+        font-weight: 900;
+      }
+
+      ${petitionButtonCss}
+    `;
+
+    document.head.appendChild(style);
+  }
+
+  function escapeRegExp(str) {
+    return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function renderMissionTitle() {
+    const H = C.HOME || {};
+    const settings = C.SETTINGS || {};
+    let title = H.MISSION_TITLE || "";
+
+    if (settings.MISSION_TITLE_MODE !== "highlight") {
+      txt("main > section:nth-of-type(2) h2", title);
+      return;
+    }
+
+    (H.MISSION_HIGHLIGHT_WORDS || []).forEach(word => {
+      const re = new RegExp(escapeRegExp(word), "gi");
+      title = title.replace(re, match => `<span class="accent">${match}</span>`);
+    });
+
+    html("main > section:nth-of-type(2) h2", title);
   }
 
   function buildMenu() {
@@ -222,7 +290,7 @@ window.BEA_CODES = {
 
     nav.innerHTML = "";
 
-    C.MENU.forEach((group, groupIndex) => {
+    C.MENU.forEach(group => {
       const wrapper = document.createElement("div");
       wrapper.className = "nav-item";
 
@@ -279,7 +347,9 @@ window.BEA_CODES = {
 
   function buildSocialLinks() {
     const social = C.SOCIAL || {};
-    const links = Object.entries(social).filter(([_, url]) => String(url || "").trim());
+    const links = Object.entries(social).filter(([_, url]) =>
+      String(url || "").trim()
+    );
 
     document.querySelectorAll(".social-links").forEach(el => el.remove());
 
@@ -290,6 +360,7 @@ window.BEA_CODES = {
 
     const wrap = document.createElement("div");
     wrap.className = "social-links";
+
     links.forEach(([name, url]) => {
       const a = document.createElement("a");
       a.href = url;
@@ -297,6 +368,7 @@ window.BEA_CODES = {
       a.setAttribute("aria-label", name.replace("_", " "));
       wrap.appendChild(a);
     });
+
     footerFirst.appendChild(wrap);
   }
 
@@ -304,6 +376,7 @@ window.BEA_CODES = {
     const config = C.VIDEOS || {};
     const section = document.querySelector("[data-videos-section]");
     const grid = document.querySelector("[data-video-grid]");
+
     if (!section || !grid) return;
 
     if (!config.SHOW_SECTION || !Array.isArray(config.ITEMS) || !config.ITEMS.length) {
@@ -327,7 +400,8 @@ window.BEA_CODES = {
         const iframe = document.createElement("iframe");
         iframe.src = item.embedUrl;
         iframe.loading = "lazy";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         iframe.allowFullscreen = true;
         embed.appendChild(iframe);
       } else if (item.videoUrl) {
@@ -352,6 +426,7 @@ window.BEA_CODES = {
     const config = C.GALLERY || {};
     const section = document.querySelector("[data-gallery-section]");
     const grid = document.querySelector("[data-gallery-grid]");
+
     if (!section || !grid) return;
 
     if (!config.SHOW_SECTION || !Array.isArray(config.ITEMS) || !config.ITEMS.length) {
@@ -367,12 +442,15 @@ window.BEA_CODES = {
     config.ITEMS.forEach(item => {
       const card = document.createElement("article");
       card.className = "gallery-card";
+
       const photo = document.createElement("div");
       photo.className = "gallery-photo";
       photo.style.backgroundImage = `url("${safeUrl(item.imageUrl || "")}")`;
+
       const body = document.createElement("div");
       body.className = "card-body";
       body.innerHTML = `<h3>${item.title || "Photo"}</h3><p>${item.description || ""}</p>`;
+
       card.appendChild(photo);
       card.appendChild(body);
       grid.appendChild(card);
@@ -381,29 +459,48 @@ window.BEA_CODES = {
 
   document.body.classList.add("has-global-bg");
 
+  injectSiteStyles();
+
   setVar("--red", C.THEME?.SOFT_RED);
   setVar("--blue", C.THEME?.SOFT_BLUE);
   setVar("--blue-soft", C.THEME?.SOFT_BLUE);
   setVar("--deep", C.THEME?.DEEP_BLUE);
   setVar("--deep-2", C.THEME?.DEEP_BLUE_2);
-  setBgVar("--global-bg-image", C.THEME?.GLOBAL_BACKGROUND_IMAGE);
-  setVar("--global-bg-opacity", C.THEME?.GLOBAL_BACKGROUND_OPACITY);
 
-  setBgVar("--dynamic-bg", C.MEDIA?.PAGE_BACKGROUNDS?.[path]);
+  if (C.SETTINGS?.GLOBAL_BACKGROUND_ON) {
+    setBgVar("--global-bg-image", C.THEME?.GLOBAL_BACKGROUND_IMAGE);
+    setVar("--global-bg-opacity", C.SETTINGS?.GLOBAL_BACKGROUND_OPACITY || ".10");
+  } else {
+    setVar("--global-bg-opacity", "0");
+  }
 
   const heroLayers = document.querySelectorAll(".hero-layer");
-  if (heroLayers[0] && C.MEDIA?.HERO_BACKGROUND_1) heroLayers[0].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_1)}")`;
-  if (heroLayers[1] && C.MEDIA?.HERO_BACKGROUND_2) heroLayers[1].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_2)}")`;
-  if (heroLayers[2] && C.MEDIA?.HERO_BACKGROUND_3) heroLayers[2].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_3)}")`;
+  if (heroLayers[0] && C.MEDIA?.HERO_BACKGROUND_1) {
+    heroLayers[0].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_1)}")`;
+  }
+  if (heroLayers[1] && C.MEDIA?.HERO_BACKGROUND_2) {
+    heroLayers[1].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_2)}")`;
+  }
+  if (heroLayers[2] && C.MEDIA?.HERO_BACKGROUND_3) {
+    heroLayers[2].style.backgroundImage = `url("${safeUrl(C.MEDIA.HERO_BACKGROUND_3)}")`;
+  }
 
   document.querySelectorAll(".page-hero").forEach(el => {
     const bg = C.MEDIA?.PAGE_BACKGROUNDS?.[path];
-    if (bg) el.style.setProperty("--page-bg", `url("${safeUrl(bg)}")`);
+    if (bg) {
+      el.style.setProperty("--page-bg", `url("${safeUrl(bg)}")`);
+    }
   });
 
   setLinks("change.org/p/pause-project-stratos", C.LINKS?.PETITION_URL);
   setLinks("boxeldercountyut.gov/641/Stratos-Project", C.LINKS?.COUNTY_QUESTION_URL);
-  attr('a[href^="mailto:"]', "href", "mailto:" + (C.LINKS?.CONTACT_EMAIL || "contact@boxelderanswers.com"));
+
+  attr(
+    'a[href^="mailto:"]',
+    "href",
+    "mailto:" + (C.LINKS?.CONTACT_EMAIL || "contact@boxelderanswers.com")
+  );
+
   txt('a[href^="mailto:"]', C.LINKS?.CONTACT_EMAIL);
 
   txt(".brand span", C.GLOBAL?.SITE_NAME);
@@ -415,6 +512,7 @@ window.BEA_CODES = {
 
   if (path === "index.html" || path === "") {
     const H = C.HOME || {};
+
     txt(".hero .kicker", H.HERO_KICKER);
     txt(".hero h1", H.HERO_TITLE);
     txt(".hero p", H.HERO_LEAD);
@@ -429,8 +527,9 @@ window.BEA_CODES = {
     txt(".stat-strip div:nth-child(4) span", H.STAT_4_TEXT);
 
     txt("main > section:nth-of-type(2) .eyebrow", H.MISSION_EYEBROW);
-    html("main > section:nth-of-type(2) h2", H.MISSION_TITLE);
+    renderMissionTitle();
     txt("main > section:nth-of-type(2) .lead", H.MISSION_LEAD);
+
     html(".mission-copy p:nth-of-type(1)", H.MISSION_P1);
     html(".mission-copy p:nth-of-type(2)", H.MISSION_P2);
     html(".mission-copy p:nth-of-type(3)", H.MISSION_P3);
