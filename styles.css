@@ -331,3 +331,14 @@ body::after {
     grid-template-columns: 1fr;
   }
 }
+/* QUICK FIXES */
+.accent {
+  color: white !important;
+}
+
+.btn.primary,
+.nav-cta {
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  color: white !important;
+}
