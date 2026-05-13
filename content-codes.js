@@ -129,7 +129,7 @@ window.BEA_CODES = {
     STAT_4_TEXT: `is when public questions still matter`,
 
     MISSION_EYEBROW: `Why this exists`,
-    MISSION_TITLE: `A public message built on <span class="accent">clarity</span>, <span class="accent">time</span>, and <span class="accent">honest answers</span>.`,
+    MISSION_TITLE: `A public message built on clarity, time, and honest answers.`,
     MISSION_LEAD: `Residents are not reacting because they fear technology. They are reacting because a project this large felt like it moved faster than the public explanation that should have come with it.`,
     MISSION_P1: `<span class="highlight">Box Elder Answers exists to slow the conversation down</span> long enough for regular people to understand what is being proposed, who controls the process, and what the long term consequences could be for water, power, land, taxes, and public oversight.`,
     MISSION_P2: `<span class="highlight">This is about more than one project announcement.</span> It is about whether a rural county is expected to absorb enormous infrastructure decisions first and receive complete explanations later. People want facts they can read, questions they can ask, and a public record that does not require guesswork.`,
