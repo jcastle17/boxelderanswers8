@@ -1,0 +1,4 @@
+This version is made for GitHub mobile upload.
+Upload every file directly to the root of the repo.
+No folders are needed.
+The HTML files have been changed to load styles.css, content-codes.js, and main.js from the root.
