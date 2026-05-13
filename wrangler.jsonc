@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "boxelderanswers-8",
+  "name": "boxelderanswers8",
   "main": "worker.js",
   "compatibility_date": "2026-05-13",
   "assets": {
