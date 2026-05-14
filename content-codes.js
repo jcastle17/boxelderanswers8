@@ -545,3 +545,106 @@ window.BEA_CODES = {
     buildGallery();
   }
 })();
+/* ADD MISSING FIVE W'S CARDS */
+
+(() => {
+
+  const sections = Array.from(document.querySelectorAll("section"));
+
+  const fiveWsSection = sections.find(section => {
+
+    const eyebrow = section.querySelector(".eyebrow");
+
+    return eyebrow && eyebrow.textContent.trim().toLowerCase().includes("five w");
+
+  });
+
+  if (!fiveWsSection) return;
+
+  const grid = fiveWsSection.querySelector(".grid-3");
+
+  if (!grid) return;
+
+  const existingLabels = Array.from(grid.querySelectorAll(".label")).map(label =>
+
+    label.textContent.trim().toLowerCase()
+
+  );
+
+  function createCard(label, title, text) {
+
+    const article = document.createElement("article");
+
+    article.className = "card large";
+
+    article.innerHTML = `
+
+      <div class="label">${label}</div>
+
+      <h3>${title}</h3>
+
+      <p>${text}</p>
+
+    `;
+
+    return article;
+
+  }
+
+  const whenCard = createCard(
+
+    "When",
+
+    "Before irreversible commitments move forward",
+
+    "Residents need a clear timeline showing when the project was introduced, when public officials were briefed, when agreements or approvals were considered, and which decisions still remain open for public review."
+
+  );
+
+  const whereCard = createCard(
+
+    "Where",
+
+    "Box Elder County carries the local impact",
+
+    "The project may be tied to state, regional, and national technology goals, but the land, water, power, roads, air quality, emergency response, and quality of life questions land here in Box Elder County."
+
+  );
+
+  const whyCard = Array.from(grid.querySelectorAll("article")).find(card => {
+
+    const label = card.querySelector(".label");
+
+    return label && label.textContent.trim().toLowerCase() === "why";
+
+  });
+
+  if (!existingLabels.includes("when")) {
+
+    if (whyCard) {
+
+      grid.insertBefore(whenCard, whyCard);
+
+    } else {
+
+      grid.appendChild(whenCard);
+
+    }
+
+  }
+
+  if (!existingLabels.includes("where")) {
+
+    if (whyCard) {
+
+      grid.insertBefore(whereCard, whyCard);
+
+    } else {
+
+      grid.appendChild(whereCard);
+
+    }
+
+  }
+
+})();
