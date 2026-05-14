@@ -106,7 +106,7 @@ window.BEA_CODES = {
   },
 
   HOME: {
-    HERO_KICKER: `Project Stratos · Box Elder County`,
+    HERO_KICKER: `Paid for and sponsored by Tony Castillo`,
     HERO_TITLE: `Before the future is decided, the public deserves the whole record.`,
     HERO_LEAD: `Box Elder Answers is a public education and records hub for residents trying to understand the environmental, water, energy, tax, and local control impacts of Project Stratos.`,
 
