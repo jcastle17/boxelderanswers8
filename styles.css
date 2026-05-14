@@ -342,3 +342,54 @@ body::after {
   border: 1px solid rgba(255,255,255,.18) !important;
   color: white !important;
 }
+/* REMOVE LINK UNDERLINES / MAKE CARD TEXT PLAIN */
+
+a,
+
+a:visited,
+
+.card a,
+
+.case-card a,
+
+.issue a,
+
+.full-bleed a,
+
+.article a,
+
+.prose a,
+
+.source-card,
+
+.source-card *,
+
+.nav a,
+
+.nav button {
+
+  text-decoration: none !important;
+
+}
+
+.card h2,
+
+.card h3,
+
+.card p,
+
+.case-card h2,
+
+.case-card h3,
+
+.case-card p,
+
+.issue h2,
+
+.issue h3,
+
+.issue p {
+
+  text-decoration: none !important;
+
+}
